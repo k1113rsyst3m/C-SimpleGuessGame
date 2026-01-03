@@ -6,8 +6,7 @@ int main()
     srand(time(NULL));
     int guess_number = rand() % 11;
     int user_number; 
-    int IsGame = 1; 
-    int IsWin = 0; 
+    int IsGame = 1;
     int command = 0; 
 
     while(IsGame == 1)
@@ -19,12 +18,13 @@ int main()
        if (user_number < guess_number) printf("Your number smallest\n"); 
        if (user_number == guess_number) 
        {
-           
            printf("You win! Do you want play again?\n1. Yes\n2. No\n>");
-           IsWin = 1;
-           scanf("%d", &command); 
+           
        }
-       if((IsWin == 1) && (command == 1))
+       
+       scanf("%d", &command);
+       
+       if(command == 1)
        {
            
            guess_number = rand() % 11;
@@ -32,7 +32,7 @@ int main()
            IsWin = 0;
            command = 0;
        }
-       if((IsWin == 1) && (command == 2))
+       if(command == 2)
        {
            IsGame = 0; 
        }
@@ -40,3 +40,4 @@ int main()
     } 
     return 0;
 }
+

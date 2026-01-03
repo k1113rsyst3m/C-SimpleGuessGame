@@ -18,10 +18,11 @@ int main()
        if (user_number < guess_number) printf("Your number smallest\n"); 
        if (user_number == guess_number) 
        {
-           printf("You win! Do you want play again?\n1. Yes\n2. No\n>");
+           printf("You win!");
            
        }
-       
+       unknow_command:
+       printf(" Do you want play again?\n1. Yes\n2. No\n>");
        scanf("%d", &command);
        
        if(command == 1)
@@ -36,8 +37,11 @@ int main()
        {
            IsGame = 0; 
        }
-
+       else {
+           goto unknow_command;
+       }
     } 
     return 0;
 }
+
 
